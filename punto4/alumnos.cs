@@ -11,7 +11,7 @@ public class Alumno
     public string Nombre { get; set; }
     public string Apellido { get; set; }
     public int Dni { get; set; }
-    public int Curso { get; set; }
+    public string Curso { get; set; }
 
     public void set_nombre(string n){
         Nombre = n;

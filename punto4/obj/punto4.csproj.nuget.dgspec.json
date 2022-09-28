@@ -1,28 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "G:\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj": {}
+    "C:\\Users\\WINDOWS\\OneDrive\\Documentos\\2docuat\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj": {}
   },
   "projects": {
-    "G:\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj": {
+    "C:\\Users\\WINDOWS\\OneDrive\\Documentos\\2docuat\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj",
+        "projectUniqueName": "C:\\Users\\WINDOWS\\OneDrive\\Documentos\\2docuat\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj",
         "projectName": "punto4",
-        "projectPath": "G:\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "G:\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\obj\\",
+        "projectPath": "C:\\Users\\WINDOWS\\OneDrive\\Documentos\\2docuat\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\punto4.csproj",
+        "packagesPath": "C:\\Users\\WINDOWS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WINDOWS\\OneDrive\\Documentos\\2docuat\\taller 2\\tl2-tp2-2022-tomas-heredia\\punto4\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\WINDOWS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -46,13 +39,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

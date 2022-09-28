@@ -6,8 +6,29 @@ using punto4;
 
 namespace LectorCSV
 {
+    
     public class HelperCsv
     {
+        //usar este
+
+        public void EscribirLinea( List<Alumno> ListadoElementos,string ruta)
+        {
+           
+                using TextWriter streamWriter = File.AppendText(ruta );
+                foreach (Alumno elemento in ListadoElementos)
+                    {
+                        Console.WriteLine(elemento);
+                        
+                        
+                        streamWriter.WriteLine(elemento.Apellido+", "+elemento.Nombre+", " +elemento.Dni+", " + elemento.Id );
+                       
+                        
+                    }
+                
+            
+            
+            
+        }
         public static List<string[]> LeerCsv(string rutaDeArchivo, string nombreDeArchivo, char caracter)
         {
             FileStream MiArchivo = new FileStream(rutaDeArchivo + nombreDeArchivo, FileMode.Open);
@@ -30,6 +51,7 @@ namespace LectorCSV
 
             if(!File.Exists(NombreArchivo)){
                 File.Create(NombreArchivo);
+                
             }
                 FileStream filestream = new FileStream(NombreArchivo, FileMode.Open);
                 StreamWriter streamWriter = new StreamWriter(filestream);

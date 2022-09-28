@@ -4,10 +4,13 @@ using System.Net;
 using System.IO;  // para archivos csv
 using LectorCSV;
 using punto4;
+using NLog;
+  NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-    public  string Atletismo = @"G:\taller2\tl2-tp2-2022-tomas-heredia\punto4\Atletismo.csv";  
-    public  string Voley = @"G:\taller2\tl2-tp2-2022-tomas-heredia\punto4\Voley.csv";  
-    public  string Futbol = @"G:\taller2\tl2-tp2-2022-tomas-heredia\punto4\Futbol.csv";  
+Console.WriteLine("hola mundos");
+      string Atletismo = "Atletismo.csv";  
+      string Voley = "Voley.csv";  
+      string Futbol = "Futbol.csv";  
     Alumno nuevo = new Alumno();
     List<Alumno> L_Atletismo = new List<Alumno>();
     List<Alumno> L_Voley = new List<Alumno>();
@@ -15,22 +18,24 @@ using punto4;
     int cantidad = 0;
     try
     {
+        
        Console.WriteLine("Ingrese el numero de alumnos de Atletismo.");
          cantidad =  Convert.ToInt32(Console.ReadLine()); 
     }
     catch (System.Exception)
     {
         Console.WriteLine("Dato ingresado incorrecto.");
-        
+        logger.Error("se ingreso un valro no esperado en cantidad de atletismo.");
     }
     for (int i = 0; i < cantidad; i++)
     {
          try
             {
+                logger.Info("Se guardaron lso alumnos de atletismo.");
                 Console.WriteLine("Ingrese el DNI.");
                 int dni =  Convert.ToInt32(Console.ReadLine()); 
                 nuevo.Dni = dni;
-
+                
                 Console.WriteLine("Ingrese el Apellido");
                 string apellido =  Console.ReadLine();
                 nuevo.Apellido = apellido; 
@@ -45,7 +50,7 @@ using punto4;
             catch (System.Exception)
             {
                 Console.WriteLine("Dato ingresado incorrecto.");
-                
+                logger.Error("se ingreso un valro no esperado en la carga de alumnos.");
             }
             
     }
@@ -58,12 +63,13 @@ using punto4;
     catch (System.Exception)
     {
         Console.WriteLine("Dato ingresado incorrecto.");
-        
+        logger.Error("se ingreso un valro no esperado en cantidad de Voley.");
     }
     for (int i = 0; i < cantidad; i++)
     {
          try
             {
+                logger.Info("Se guardaron lso alumnos de Voley.");
                 Console.WriteLine("Ingrese el DNI.");
                 int dni =  Convert.ToInt32(Console.ReadLine()); 
                 nuevo.Dni = dni;
@@ -81,7 +87,7 @@ using punto4;
             catch (System.Exception)
             {
                 Console.WriteLine("Dato ingresado incorrecto.");
-                
+                logger.Error("se ingreso un valro no esperado en la carga de alumnos.");
             }
             
     }
@@ -94,12 +100,13 @@ using punto4;
     catch (System.Exception)
     {
         Console.WriteLine("Dato ingresado incorrecto.");
-        
+        logger.Error("se ingreso un valro no esperado en cantidad de Futbol.");
     }
     for (int i = 0; i < cantidad; i++)
     {
          try
             {
+                logger.Info("Se guardaron lso alumnos de Futbol.");
                 Console.WriteLine("Ingrese el DNI.");
                 int dni =  Convert.ToInt32(Console.ReadLine()); 
                 nuevo.Dni = dni;
@@ -117,11 +124,12 @@ using punto4;
             catch (System.Exception)
             {
                 Console.WriteLine("Dato ingresado incorrecto.");
-                
+                logger.Error("se ingreso un valro no esperado en la carga de alumnos.");
             }
             
     }
-
-    archivoCSV(L_Atletismo,Atletismo);
-    archivoCSV(L_Voley,Voley);
-    archivoCSV(L_Futbol,Futbol);
+    HelperCsv archivo = new HelperCsv();
+    logger.Info("se ingreso las listas a los .csv.");
+    archivo.EscribirLinea(L_Atletismo,Atletismo);
+    archivo.EscribirLinea(L_Voley,Voley);
+    archivo.EscribirLinea(L_Futbol,Futbol); 
